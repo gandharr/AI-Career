@@ -40,6 +40,4 @@ jobs:
             npm install --include=dev
           fi
       - name: Build
-        env:
-          VITE_BASE_PATH: ./
         run: npm run build

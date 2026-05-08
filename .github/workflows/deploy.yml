@@ -51,13 +51,7 @@ jobs:
         env:
           # Set in GitHub → Settings → Secrets → Actions → New repository secret
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
-          # Use relative asset URLs so the site works regardless of Pages path.
-          VITE_BASE_PATH: ./
         run: |
-          if ! npx --no-install vite --version >/dev/null 2>&1; then
-            echo "vite not found after install; reinstalling with dev dependencies"
-            npm install --include=dev
-          fi
           npm run build
 
       - name: Upload Pages artifact
