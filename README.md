@@ -89,7 +89,9 @@ flowchart LR
 | Auth | JWT Bearer |
 | Deployment | GitHub Pages + Render |
 
-## Deployment Availability
+## Deployment Notes
+- Frontend is deployed from `frontend/dist` to GitHub Pages at [https://gandharr.github.io/AI-Career/](https://gandharr.github.io/AI-Career/).
+- The Pages build uses relative asset paths so it works correctly under the repository subpath.
 - Render `free` web services sleep after inactivity and can show a backend wake-up delay.
 - For always-available backend access (phone/laptop without retry), deploy backend on Render `starter` (or higher).
 - This repo's `render.yaml` is configured for an always-on `starter` backend plan.
