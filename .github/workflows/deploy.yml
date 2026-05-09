@@ -41,6 +41,26 @@ jobs:
           npm config list || true
           echo "=== End diagnostics ==="
 
+      - name: Save diagnostics to file
+        working-directory: frontend
+        run: |
+          echo "=== CI Diagnostic File ===" > ci-diagnostics.txt
+          node --version >> ci-diagnostics.txt || true
+          npm --version >> ci-diagnostics.txt || true
+          echo "--- pwd ---" >> ci-diagnostics.txt
+          pwd >> ci-diagnostics.txt
+          echo "--- ls -la frontend ---" >> ci-diagnostics.txt
+          ls -la >> ci-diagnostics.txt
+          echo "--- npm config list ---" >> ci-diagnostics.txt
+          npm config list >> ci-diagnostics.txt || true
+          echo "=== End diagnostics ===" >> ci-diagnostics.txt
+
+      - name: Upload diagnostics artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-diagnostics
+          path: frontend/ci-diagnostics.txt
+
       - name: Install dependencies
         working-directory: frontend
         run: |
