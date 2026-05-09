@@ -56,7 +56,7 @@ jobs:
           echo "=== End diagnostics ===" >> ci-diagnostics.txt
 
       - name: Upload diagnostics artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ci-diagnostics
           path: frontend/ci-diagnostics.txt
@@ -100,4 +100,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
