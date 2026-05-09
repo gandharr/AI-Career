@@ -30,11 +30,10 @@ jobs:
       - name: Install dependencies
         working-directory: frontend
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci --include=dev
-          else
-            npm install --include=dev
-          fi
+          # Use a simple, compatible install in CI. 'npm ci' is deterministic and
+          # installs devDependencies when NODE_ENV is not 'production'. This avoids
+          # inconsistent CLI flags across npm versions on runners.
+          npm ci
 
       - name: Validate VITE_API_URL
         env:
