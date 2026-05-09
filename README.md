@@ -17,7 +17,7 @@ An internship-ready full-stack platform that gives **deterministic**, skill-grou
 ## Screenshots
 
 ### Dashboard
-![CareerAI Dashboard](https://raw.githubusercontent.com/gandharr/AI-Career/main/docs/screenshots/dashboard-home.png?v=20260315)
+![CareerAI Dashboard](https://raw.githubusercontent.com/gandharr/AI-Career/main/docs/screenshots/dashboard-home-new.png)
 
 ### API Docs
 ![CareerAI API Docs](https://raw.githubusercontent.com/gandharr/AI-Career/main/docs/screenshots/api-docs.png)
