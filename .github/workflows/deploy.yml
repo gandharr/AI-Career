@@ -27,6 +27,20 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Diagnostics
+        working-directory: frontend
+        run: |
+          echo "=== Diagnostic: node/npm versions and environment ==="
+          node --version || true
+          npm --version || true
+          echo "--- pwd ---"
+          pwd
+          echo "--- ls -la frontend ---"
+          ls -la
+          echo "--- npm config list ---"
+          npm config list || true
+          echo "=== End diagnostics ==="
+
       - name: Install dependencies
         working-directory: frontend
         run: |
