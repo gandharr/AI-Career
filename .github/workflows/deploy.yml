@@ -64,10 +64,9 @@ jobs:
       - name: Install dependencies
         working-directory: frontend
         run: |
-          # Use a simple, compatible install in CI. 'npm ci' is deterministic and
-          # installs devDependencies when NODE_ENV is not 'production'. This avoids
-          # inconsistent CLI flags across npm versions on runners.
-          npm ci
+          # Use a compatible install in CI. Use `npm install` here to tolerate
+          # minor lockfile/platform mismatches on runners and still install devDeps.
+          npm install --no-audit --no-fund --include=dev
 
       - name: Validate VITE_API_URL
         env:
